@@ -1,4 +1,4 @@
-import { CommandConfig, CommandData, Orientation } from "./interfaces";
+import { CommandSet, CommandData, Orientation } from "./interfaces";
 import Robot from "./robot";
 import { CommandType } from "./enums";
 import {
@@ -10,25 +10,25 @@ import {
 } from "./commands";
 
 export default class Simulator {
-  private _commandLookup: Map<CommandType, CommandConfig> = new Map();
+  private _commandLookup: Map<CommandType, CommandSet> = new Map();
 
   constructor(private _robot: Robot) {
     this.configure();
   }
 
   public run(commandData: CommandData) {
-    const commandConfig = this._commandLookup.get(
+    const commandSet = this._commandLookup.get(
       <CommandType>commandData.name
     );
 
-    if (commandConfig?.enabled) {
-      commandConfig?.command.execute(
+    if (commandSet?.enabled) {
+      commandSet?.command.execute(
         {
           orientation: <Orientation>commandData.orientation,
         },
         {
-          successCallback: commandConfig?.handlers?.successCallback,
-          failureCallback: commandConfig?.handlers?.failureCallback,
+          successCallback: commandSet?.handlers?.successCallback,
+          failureCallback: commandSet?.handlers?.failureCallback,
         }
       );
     }
@@ -80,9 +80,9 @@ export default class Simulator {
 
   private setEnabledCommandExecution(enabled: boolean) {
     this._commandLookup.forEach(
-      (commandConfig: CommandConfig, commandType: CommandType): void => {
+      (commandSet: CommandSet, commandType: CommandType): void => {
         if (commandType !== CommandType.Place) {
-          commandConfig.enabled = enabled;
+          commandSet.enabled = enabled;
         }
       }
     );

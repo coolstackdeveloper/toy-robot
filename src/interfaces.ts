@@ -33,7 +33,7 @@ export interface Command {
   execute(parameter: CommandParameter, handlers: CommandHandlers): void;
 }
 
-export interface CommandConfig {
+export interface CommandSet {
   enabled: boolean;
   command: Command;
   handlers?: CommandHandlers;
