@@ -59,6 +59,8 @@ To build the simulator I used the familiar terms used in robotics like robot, mo
 
 ## Setup and Execution
 
+Note that I have used `bash` as a default shell within Visual Studio Code to run the commands below.
+
 ### Install basic dependencies
 
 Run `npm install` to install basic dependencies
@@ -74,3 +76,12 @@ The program can be run in two modes:
 1. `Interactive mode` where in the user can type in the commands. To run in interactive mode simply type `npm start`. Note that the application will run in watch mode by default. So press `Ctrl+C` to exit the application.
 
 2. `Automated mode` where in the commands can be read from the file. To run in automated mode simply type with the filename for e.g. `npm start .\datasets\set1.txt`. The application will run in watch mode by default. So press `Ctrl+C` to exit the application.
+
+## Screenshots
+
+## Interactive mode
+![alt text](/screenshots/interactive.png?raw=true "Interactive mode")
+
+
+## Automated mode
+![alt text](/screenshots/automated.png?raw=true "Interactive mode")
