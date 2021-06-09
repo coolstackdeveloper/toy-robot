@@ -50,7 +50,9 @@ Output: 3,3,NORTH
 
 ## Design
 
-To build the simulator I used the familiar terms used in robotics like robot, motor, compass, turn etc. This was its very easy to relate the implementation with the concepts. The idea is to compose robot using two motors -  horizontal and vertical. The motor can step given number of times but in our case it would move one step at a time. The motor can be moved forward and backward. The robot orientation is a derivative of current motor step and current motor head movement.
+To build the simulator I used the familiar terms used in robotics like robot, motor, compass, turn etc. This was it was very easy to relate the implementation with the concepts. 
+
+The idea is to compose robot using two motors -  horizontal and vertical. The motor can step given number of times but in our case it would move one step at a time. The motor can be moved forward and backward. The robot orientation is a derivative of current motor step and current motor head movement.
 
 ## Development and Execution environment
 
